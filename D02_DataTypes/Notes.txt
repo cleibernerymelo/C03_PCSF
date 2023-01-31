@@ -1,0 +1,20 @@
+﻿Data Type
+----------
+	Value types (nativos)
+		int
+		double
+	Reference types (não nativos, os que iremos criar --> objects)
+		string
+		class
+----------------------------------------------------------------
+classe
+			propriedades --> caracteristicas
+			metodos --> ações
+----------------------------------------------------------------
+	Classe Formando
+		propriedades
+			nome;
+			data nascimento;
+		métodos
+			inscrever;
+			apagar;

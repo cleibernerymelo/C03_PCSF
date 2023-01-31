@@ -1,0 +1,16 @@
+﻿        #region Properties
+
+        #endregion
+        #region Constructors
+
+        #endregion
+        #region Methods
+
+        #endregion
+
+        static -->  não pode ser instanciado na criação de objeto. 
+        So pode ser usado dentro da classe.
+
+        metodo ou classe utilitarias seria um exemplo de static
+
+        Instancias --> classe de negocio
