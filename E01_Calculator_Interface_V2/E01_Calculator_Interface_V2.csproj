@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1814D38E-4CBB-46A3-B77B-CFB4F7BCFAB1}</ProjectGuid>
+    <ProjectGuid>{F9557BE5-685D-42E5-A087-4333A7AC11B9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>E01_ApresentarPreçoFinalDoProduto</RootNamespace>
-    <AssemblyName>E01_ApresentarPreçoFinalDoProduto</AssemblyName>
+    <RootNamespace>E01_Calculator_Interface_V2</RootNamespace>
+    <AssemblyName>E01_Calculator_Interface_V2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interface1.cs" />
+    <Compile Include="Classes\Calculator.cs" />
+    <Compile Include="Interfaces\ICalculator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\D00_Utility\D00_Utility.csproj">
+      <Project>{77a205aa-0807-4641-9a28-b40ba21894ec}</Project>
+      <Name>D00_Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

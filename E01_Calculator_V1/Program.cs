@@ -12,7 +12,11 @@ namespace E01_Calculator_V1
         static void Main(string[] args)
         {            
             Calculator calculator = new Calculator(); 
-            calculator.MotorCalculator();             
+            calculator.MotorCalculator();
+
+           Console.WriteLine(Utility.ValidateNumber(10));
+           Console.WriteLine(Utility.ValidateNumber(0));
+            Console.WriteLine("Teste");
         }
     }
 }

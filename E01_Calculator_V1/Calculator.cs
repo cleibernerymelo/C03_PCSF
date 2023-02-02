@@ -6,13 +6,13 @@ namespace E01_Calculator_V1
     internal class Calculator
     {
         #region Attributes
-        private double numero1;
-        private double numero2;
+        private decimal numero1;
+        private decimal numero2;
         private string operacao;
         #endregion
 
         #region Properties
-        public  double Numero1
+        public  decimal Numero1
         {
             get
             {
@@ -24,7 +24,7 @@ namespace E01_Calculator_V1
             }
         }
 
-        public double Numero2
+        public decimal Numero2
         {
             get
             {
@@ -97,47 +97,53 @@ namespace E01_Calculator_V1
         public void ReadValues()
         {
             bool success;
-            double resultInt;
+            decimal resultInt;
             Console.Write("Nº: ");
-            success = (double.TryParse(Console.ReadLine(), out resultInt));
+            success = (decimal.TryParse(Console.ReadLine(), out resultInt));
             Numero1 = resultInt;
             Console.Write("Nº: ");
-            success = double.TryParse(Console.ReadLine(), out resultInt);
+            success = decimal.TryParse(Console.ReadLine(), out resultInt);
             Numero2 = resultInt;
-
+            #region Comments
             //Testei o bloco código abaixo, pois queria informar ao utilizador que o valor informado estava no formato invalido
             //Em alguns testes ele passou, ou seja, o resultado foi o que eu esperava.
             //Mas em alguns testes que ele não devolveu o resultado expectado.
             //Referencia https://www.macoratti.net/17/08/c_difparse1.htm
 
-            //Console.Write("Nº: ");
             //try
             //{
             //    Numero1 = double.Parse(Console.ReadLine());
-            //}
-            //catch (Exception)
-            //{
-
-            //    Console.WriteLine("Formato Inválido");
-            //}
-
-            //Console.Write("Nº: ");
-            //try
-            //{
             //    Numero2 = double.Parse(Console.ReadLine());
             //}
+            //catch (DivideByZeroException)
+            //{
+            //    Console.WriteLine("\n\nErro ao dividir por zero.");
+            //}
+            //catch (ArgumentException)
+            //{
+            //    Console.WriteLine("\n\nArgumento em falta.");
+            //}
+            //catch (FormatException)
+            //{
+            //    Console.WriteLine("\n\nFormato incorreto.");
+            //}
             //catch (Exception)
             //{
-
-            //    Console.WriteLine("Formato Inválido");
+            //    Console.WriteLine("\n\nAconteceu um erro");
+            //    //throw;
             //}
+            //finally
+            //{
+            //    Console.WriteLine("\n\nA terminar.");
+            //}
+            #endregion
         }
         #endregion
 
         #region Mostrar Resultado
         public void ShowResult()
         {
-            double resultado = 0;
+            decimal resultado = 0;
             bool value = true;
 
             switch (Operacao)
@@ -182,33 +188,51 @@ namespace E01_Calculator_V1
         #endregion
 
         #region Somar
-        public double Somar(double Numero1, double Numero2)
+        public decimal Somar(decimal Numero1, decimal Numero2)
         {
-            double resultado = Numero1 + Numero2;
+            decimal resultado = Numero1 + Numero2;
             return resultado;
         }
         #endregion
 
         #region Subtrair
-        public double Subtrair(double Numero1, double Numero2)
+        public decimal Subtrair(decimal Numero1, decimal Numero2)
         {
-            double resultado = Numero1 - Numero2;
+            decimal resultado = Numero1 - Numero2;
             return resultado;
         }
         #endregion
 
         #region Multiplicar
-        public double Multiplicar(double Numero1, double Numero2)
+        public decimal Multiplicar(decimal Numero1, decimal Numero2)
         {
-            double resultado = Numero1 * Numero2;
+            decimal resultado = Numero1 * Numero2;
             return resultado;
         }
         #endregion
 
         #region Dividir
-        public double Dividir(double Numero1, double Numero2)
+        public decimal Dividir(decimal Numero1, decimal Numero2)
         {
-            double resultado = Numero1 / Numero2;
+            decimal resultado = 0;
+           
+            try
+            {
+                resultado = Numero1 / Numero2;
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("\n\nErro ao dividir por zero.");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("\n\nFormato incorreto.");
+            }
+            finally
+            {
+                Console.WriteLine("\n\nA terminar.");
+            }
+
             return resultado;
         }
         #endregion

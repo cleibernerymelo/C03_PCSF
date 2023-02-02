@@ -18,7 +18,7 @@ namespace D00_Utility
             Console.WriteLine("á Á à À ã Ã â Â ç Ç º ª");
         }
 
-        public static void WriteTitle(string title) 
+        public static void WriteTitle(string title)
         {
             Console.WriteLine(new string('-', 50));
             Console.WriteLine(title.ToUpper());
@@ -69,7 +69,7 @@ namespace D00_Utility
             WriteTitle("Qual operação deseja realizar?\n");
             foreach (var item in menu)
             {
-                Console.WriteLine(item);           
+                Console.WriteLine(item);
             }
         }
 
@@ -80,7 +80,7 @@ namespace D00_Utility
             Console.OutputEncoding = Encoding.UTF8;
             Console.WriteLine($"Bem vindo ao MyCalculator - {data}");
             WriteTitle("Qual operação deseja realizar?\n");
-            
+
             tabela[0, 0] = "0. ";
             tabela[0, 1] = "Exit";
             tabela[1, 0] = "1. ";
@@ -96,6 +96,26 @@ namespace D00_Utility
             {
                 Console.WriteLine(item);
             }
+        }
+
+
+        public static bool ValidateNumber(double value)
+        {
+            //V1
+            //if (value == 0)
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
+
+            //V2
+            return  value == 0 ? true : false;
+
+            //V3
+            // return value == 0;
         }
     }
 }

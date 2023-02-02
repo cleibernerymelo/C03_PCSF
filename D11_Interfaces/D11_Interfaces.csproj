@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1814D38E-4CBB-46A3-B77B-CFB4F7BCFAB1}</ProjectGuid>
+    <ProjectGuid>{28FD7DEC-46B2-424A-95E4-A6DF9512D20D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>E01_ApresentarPreçoFinalDoProduto</RootNamespace>
-    <AssemblyName>E01_ApresentarPreçoFinalDoProduto</AssemblyName>
+    <RootNamespace>D11_Interfaces</RootNamespace>
+    <AssemblyName>D11_Interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interface1.cs" />
+    <Compile Include="IUser.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\D00_Utility\D00_Utility.csproj">
+      <Project>{682b30cd-5707-41c6-9d62-07dc8ff2b71b}</Project>
+      <Name>D00_Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
