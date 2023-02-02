@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E01_Calculator_Interface_V2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D12_AccessModifiers", "D12_AccessModifiers\D12_AccessModifiers.csproj", "{06A3198B-C8BB-44F1-8080-B8C73965B8C4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{172A5024-3944-45D1-B402-19E8385542D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
