@@ -99,6 +99,7 @@ namespace E01_Calculator_V1
             bool success;
             decimal resultInt;
             Console.Write("Nº: ");
+            //Console.Write(Utility.ValidateNumberDouble(Console.ReadLine())); implementar um laço
             success = (decimal.TryParse(Console.ReadLine(), out resultInt));
             Numero1 = resultInt;
             Console.Write("Nº: ");
@@ -144,28 +145,32 @@ namespace E01_Calculator_V1
         public void ShowResult()
         {
             decimal resultado = 0;
-            bool value = true;
+            //bool value = true;
 
             switch (Operacao)
             {
                 case "1":
                     {
                         resultado = Somar(Numero1, Numero2);
+                        Console.WriteLine($"{Numero1} + {Numero2} = {Math.Round(resultado, 3)}");
                         break;
                     };
                 case "2":
                     {
                         resultado = Subtrair(Numero1, Numero2);
+                        Console.WriteLine($"{Numero1} - {Numero2} = {Math.Round(resultado, 3)}");
                         break;
                     };
                 case "3":
                     {
                         resultado = Multiplicar(Numero1, Numero2);
+                        Console.WriteLine($"{Numero1} * {Numero2} = {Math.Round(resultado, 3)}");
                         break;
                     };
                 case "4":
                     {
                         resultado = Dividir(Numero1, Numero2);
+                        Console.WriteLine($"{Numero1} / {Numero2} = {Math.Round(resultado, 3)}");
                         break;
                     };
                 case "0":
@@ -175,13 +180,13 @@ namespace E01_Calculator_V1
                     };
                 default:
                     Utility.OptionInvalid();
-                    value = false;
+                    //value = false;
                     break;
             }
-            if (value == true)
-            {
-                Console.WriteLine($"Resultado {Numero1} {Operacao} {Numero2} = {Math.Round(resultado,3)}");
-            }
+            //if (value == true)
+            //{
+            //    Console.WriteLine($"Resultado {Numero1} {Operacao} {Numero2} = {Math.Round(resultado,3)}");
+            //}
             Console.ReadKey();
             Console.Clear();
         }

@@ -1,0 +1,41 @@
+﻿Assembly
+	namespace
+		classes (access modifiers usado nos elementos da classe)
+			atributos (variaveis)
+			fields(variavel usada como propriedades da classe)
+			construtores
+			metodos
+
+			obs: cada classe pode ser assinada com modifiers (public, private, protect)
+			namespace - tem haver com codigo no visual studio. Organizar nossas classes
+			assembly - é o ficheiro compilado em codigo maquina .exe ou .dll no caso de labary será .dll se for console será .exe
+
+
+			GestãoStock.exe <-- internal Class produto
+							
+							namespace Produto internal fica restrito apenas ao namespace
+							namespace Stock public fica disponivel independete do namespace
+
+			public tem de ser usado sempre: construtores, na classe que implementa a interface.
+			private normalmente a nivel de fields. + variavel da classe (atributos)
+
+			derived class
+
+Encapsulamento
+	aquilo que é da classe deve ser usado a nivel da classe
+	aquilo que pode ser usado a nivel da assembly deve ser publico
+
+	fields e atributos privados
+	metodos publicos
+
+	os fields devem ser privados
+	propriedades e metodos publicos
+
+
+
+	Não se deve criar uma instancia a classe base. Uso a classe base como modolo
+	usando tudo que em comum entre as classes. Porém devo protege-la para não ser instanciada
+	e não devo colocar como priviado.
+
+	protected é para garantir que poderei usar apenas com mecanismo de herança.
+	mas simplesmente tentar usar em outra classe não será possivel.

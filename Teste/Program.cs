@@ -1,18 +1,18 @@
 ﻿using System;
-using D00_Utility;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using D00_Utility;
 
-namespace E01_Calculator_V1
+namespace Teste
 {
     internal class Program
     {
         static void Main(string[] args)
-        {            
-            Calculator calculator = new Calculator();
-            calculator.MotorCalculator();
+        {
+            Console.WriteLine(Utility.ValidateNumberDouble("x"));
+            Console.ReadKey();
         }
     }
 }

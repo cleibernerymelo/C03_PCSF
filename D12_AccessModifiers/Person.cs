@@ -14,6 +14,7 @@ namespace D12_AccessModifiers
         private string message2; // usado somente na classe
         public string message3;
         #endregion
+
         #region Properties
         internal string Name { get; set; }
         internal string Address { get; set; }
@@ -35,6 +36,11 @@ namespace D12_AccessModifiers
         {
             message1 = "hellow world";
             message2 = "Bom dia";
+        }
+
+        internal void Create()
+        {
+
         }
         #endregion
     }

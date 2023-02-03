@@ -117,5 +117,13 @@ namespace D00_Utility
             //V3
             // return value == 0;
         }
+
+        public static bool ValidateNumberDouble(string texto) 
+        {
+            bool success;
+            double resultDouble;
+            success = (double.TryParse(texto, out resultDouble));
+            return success == true && !ValidateNumber(resultDouble);           
+        }
     }
 }
