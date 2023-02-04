@@ -35,8 +35,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E01_Calculator_Interface_V2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D12_AccessModifiers", "D12_AccessModifiers\D12_AccessModifiers.csproj", "{06A3198B-C8BB-44F1-8080-B8C73965B8C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teste", "Teste\Teste.csproj", "{E973B988-DB2A-4212-AF8B-448501B3AB8B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D13_Abstraction", "D13_Abstraction\D13_Abstraction.csproj", "{69B3BBD6-A9EE-48A9-9C79-AFAC1E6E5B6C}"
 EndProject
 Global
@@ -109,10 +107,6 @@ Global
 		{06A3198B-C8BB-44F1-8080-B8C73965B8C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06A3198B-C8BB-44F1-8080-B8C73965B8C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06A3198B-C8BB-44F1-8080-B8C73965B8C4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E973B988-DB2A-4212-AF8B-448501B3AB8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E973B988-DB2A-4212-AF8B-448501B3AB8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E973B988-DB2A-4212-AF8B-448501B3AB8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E973B988-DB2A-4212-AF8B-448501B3AB8B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{69B3BBD6-A9EE-48A9-9C79-AFAC1E6E5B6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{69B3BBD6-A9EE-48A9-9C79-AFAC1E6E5B6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69B3BBD6-A9EE-48A9-9C79-AFAC1E6E5B6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
