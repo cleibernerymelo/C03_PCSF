@@ -11,19 +11,11 @@ namespace D11_Interfaces
     {
         static void Main(string[] args)
         {
-            Utility.SetUnicodeConsole();
-            try
-            {
-
-
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            Utility.TerminateConsole();
+            User user1 = new User();
+            User user2 = new User("Antonio Melo");    
+            user1.Login();
+            user2.Login();
+            Console.ReadKey();
         }
     }
 }

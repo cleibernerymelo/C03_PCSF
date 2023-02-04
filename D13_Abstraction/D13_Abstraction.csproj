@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9B008E05-AD1D-41BC-A86A-833405DB40C4}</ProjectGuid>
+    <ProjectGuid>{69B3BBD6-A9EE-48A9-9C79-AFAC1E6E5B6C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>E01_Calculator_V1</RootNamespace>
-    <AssemblyName>E01_Calculator_V1</AssemblyName>
+    <RootNamespace>D13_Abstraction</RootNamespace>
+    <AssemblyName>D13_Abstraction</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Calculator.cs" />
-    <Compile Include="Interfaces\ICalculator.cs" />
+    <Compile Include="Curso.cs" />
+    <Compile Include="CursoSoftskill.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

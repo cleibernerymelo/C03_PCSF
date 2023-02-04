@@ -1,9 +1,10 @@
 ﻿using D00_Utility;
+using E01_Calculator_V1.Interfaces;
 using System;
 
 namespace E01_Calculator_V1
 {
-    internal class Calculator
+    internal class Calculator : ICalculator
     {
         #region Attributes
         private decimal numero1;
