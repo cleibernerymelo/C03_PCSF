@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using D00_Utility;
 
 namespace D11_Interfaces
@@ -34,19 +30,36 @@ namespace D11_Interfaces
         #endregion
 
         #region Methods
+
         public void Login()
         {
-            string[] credentionsData = new string[] { "Dora", "dora123", "Antonio", "antonio123" };
+            ReadCredentions();
+        }
+
+        public void Logout()
+        {
+
+        }
+
+        public void Message(string message)
+        {
+
+        }
+
+
+        public void ReadCredentions()
+        {
+            string[] Userdata = StorageUser();
 
             do
             {
                 Console.WriteLine($"Name: {Name}");
                 Console.Write("UserName: ");
                 UserName = Console.ReadLine();
-                UserName = Array.Find(credentionsData, e => e.Equals(UserName));
+                UserName = Array.Find(Userdata, e => e.Equals(UserName));
                 Console.Write("Password: ");
                 Password = Console.ReadLine();
-                Password = Array.Find(credentionsData, e => e.Equals(Password));
+                Password = Array.Find(Userdata, e => e.Equals(Password));
                 if (UserName == null || Password == null)
                 {
                     Console.WriteLine("\nlogin error!\n");
@@ -60,14 +73,10 @@ namespace D11_Interfaces
             } while (UserName == null || Password == null);
         }
 
-        public void Logout()
+        public static string[] StorageUser()
         {
-
-        }
-
-        public void Message(string message)
-        {
-
+            string[] credentionsData = new string[] { "Dora", "dora123", "Antonio", "antonio123" };
+            return credentionsData;
         }
         #endregion
 
