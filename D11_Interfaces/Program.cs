@@ -12,9 +12,16 @@ namespace D11_Interfaces
         static void Main(string[] args)
         {
             User user1 = new User();
-            User user2 = new User("Antonio Melo");    
+            User user2 = new User();    
             user1.Login();
             user2.Login();
+
+
+            //UserService userService = new UserService();
+
+            //User user = userService.Login(username, password);
+
+
             Console.ReadKey();
         }
     }

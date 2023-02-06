@@ -16,7 +16,7 @@ namespace D11_Interfaces
         #region Constructor
         public User() 
         {
-            Name = "Dora Nery";
+            Name = "";
             UserName = "";
             Password = "";
         }
@@ -49,34 +49,40 @@ namespace D11_Interfaces
 
         public void ReadCredentions()
         {
-            string[] Userdata = StorageUser();
-
+            User[] Userdata = StorageUser();
             do
             {
-                Console.WriteLine($"Name: {Name}");
                 Console.Write("UserName: ");
-                UserName = Console.ReadLine();
-                UserName = Array.Find(Userdata, e => e.Equals(UserName));
+                string username = Console.ReadLine();
                 Console.Write("Password: ");
-                Password = Console.ReadLine();
-                Password = Array.Find(Userdata, e => e.Equals(Password));
-                if (UserName == null || Password == null)
+                string password = Console.ReadLine();
+
+
+                User dbUser = Array.Find(Userdata, e => e.UserName.Equals(username));
+                if (dbUser != null && dbUser.Password.Equals(password))
                 {
-                    Console.WriteLine("\nlogin error!\n");
+                    // Login success
+                    Console.WriteLine($"\nLogin success for! {dbUser.Name}.\n");
                     Utility.TerminateConsole();
-                }
-                else
+                } else
                 {
-                    Console.WriteLine("\nLogin success!\n");
+                    // Login failed
+                    Console.WriteLine("\nlogin error!\n");
                     Utility.TerminateConsole();
                 }
             } while (UserName == null || Password == null);
         }
 
-        public static string[] StorageUser()
+        public static User[] StorageUser()
         {
-            string[] credentionsData = new string[] { "Dora", "dora123", "Antonio", "antonio123" };
+            User[] credentionsData = new User[] {
+                new User{ Name = "Dora", UserName = "dora", Password = "dora123" },
+                new User{ Name = "Antonio", UserName = "antonio", Password = "antonio123" }
+            };
+
             return credentionsData;
+            //string[] credentionsData = new string[] { "Dora", "dora123", "Antonio", "antonio123" };
+            //return credentionsData;
         }
         #endregion
 
