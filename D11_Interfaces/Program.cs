@@ -12,9 +12,11 @@ namespace D11_Interfaces
         static void Main(string[] args)
         {
             User user1 = new User();
-            User user2 = new User();    
+            User user2 = new User();
+           // User user3 = new User();
             user1.Login();
             user2.Login();
+           // user3.Login();
 
 
             //UserService userService = new UserService();

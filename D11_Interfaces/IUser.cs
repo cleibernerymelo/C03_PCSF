@@ -21,6 +21,9 @@ namespace D11_Interfaces
         void Message(string message);
         void Login();
         void Logout();
+        void ReadCredentions();
+        User[] StorageUser();
+        User[] CreateUser();
         #endregion
     }
 }

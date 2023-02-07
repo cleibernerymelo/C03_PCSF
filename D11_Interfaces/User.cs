@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Security;
 using D00_Utility;
 
 namespace D11_Interfaces
@@ -21,7 +22,7 @@ namespace D11_Interfaces
             Password = "";
         }
 
-        public User(string name, [Optional] string username, [Optional] string password)
+        public User(string name, string username, string password)
         {
             Name = name;
             UserName = username;
@@ -49,7 +50,7 @@ namespace D11_Interfaces
 
         public void ReadCredentions()
         {
-            User[] Userdata = StorageUser();
+            User[] userdata = StorageUser();
             do
             {
                 Console.Write("UserName: ");
@@ -57,8 +58,8 @@ namespace D11_Interfaces
                 Console.Write("Password: ");
                 string password = Console.ReadLine();
 
-
-                User dbUser = Array.Find(Userdata, e => e.UserName.Equals(username));
+                //User dbUser = Array.Find(userdata, e => e.UserName.Equals(username));
+                User dbUser = Array.Find(userdata, e => e.UserName.Equals(username) && e.Password.Equals(password));
                 if (dbUser != null && dbUser.Password.Equals(password))
                 {
                     // Login success
@@ -67,24 +68,51 @@ namespace D11_Interfaces
                 } else
                 {
                     // Login failed
-                    Console.WriteLine("\nlogin error!\n");
+                    Console.Write("\nUser not exist. create an account (true/false) ? ");
+                    bool resposta = Boolean.Parse(Console.ReadLine());
+                    if (resposta)
+                    {
+                        CreateUser();
+                        Utility.TerminateConsole();
+                    }
+                    else
+                    {
+                        Utility.EnvironmentExit();
+                    }
+                    
                     Utility.TerminateConsole();
                 }
             } while (UserName == null || Password == null);
         }
 
-        public static User[] StorageUser()
+        public User[] StorageUser()
         {
-            User[] credentionsData = new User[] {
-                new User{ Name = "Dora", UserName = "dora", Password = "dora123" },
-                new User{ Name = "Antonio", UserName = "antonio", Password = "antonio123" }
+            User[] credentionsData = new User[] 
+            {
+                new User{ Name = "Dora Nery", UserName = "dora", Password = "dora123" },
+                new User{ Name = "Antonio Melo", UserName = "antonio", Password = "antonio123" }
             };
 
             return credentionsData;
             //string[] credentionsData = new string[] { "Dora", "dora123", "Antonio", "antonio123" };
             //return credentionsData;
         }
-        #endregion
 
+        public User[] CreateUser()
+        {
+            Console.Write("Name: ");
+            string name = Console.ReadLine();
+            Console.Write("User Name: ");
+            string userName = Console.ReadLine();
+            Console.Write("Password: ");
+            string password = Console.ReadLine();
+            User[] credentionsData = new User[]
+            {
+                new User{Name = name, UserName = userName, Password = password}
+            };
+            Console.WriteLine($"Welcome {credentionsData[0].Name}. Login success!");
+            return credentionsData;
+        }
+        #endregion
     }
 }
